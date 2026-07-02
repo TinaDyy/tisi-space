@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="150" viewBox="0 0 640 150" role="img" aria-label="TIVION Space International">
+  <rect width="640" height="150" fill="none"/>
+  <g transform="translate(20 26)">
+    <path d="M8 68c24-41 55-54 79-40" fill="none" stroke="#d59b35" stroke-linecap="round" stroke-width="6"/>
+    <path d="M20 76c20-25 42-34 65-24" fill="none" stroke="#4cc7d9" stroke-linecap="round" stroke-width="4" opacity=".82"/>
+    <path d="M38 28h25L50.5 80 38 28Z" fill="#06111f"/>
+    <path d="M50.5 80 63 28h14L50.5 100 24 28h14l12.5 52Z" fill="#06111f" opacity=".74"/>
+    <circle cx="83" cy="27" r="5" fill="#d59b35"/>
+  </g>
+  <text x="135" y="78" fill="#06111f" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" letter-spacing="8">TIVION</text>
+  <text x="139" y="112" fill="#526679" font-family="Courier New, monospace" font-size="18" letter-spacing="10">SPACE INTERNATIONAL</text>
+</svg>

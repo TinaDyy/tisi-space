@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#06111f"/>
+  <path d="M80 410c270-430 650-470 1020-130" fill="none" stroke="#d59b35" stroke-width="5" opacity=".72"/>
+  <path d="M160 455c250-260 560-300 850-110" fill="none" stroke="#4cc7d9" stroke-width="4" opacity=".7"/>
+  <circle cx="908" cy="238" r="10" fill="#d59b35"/>
+  <path d="M0 498c220-75 475-96 733-46 181 35 332 96 467 157v21H0z" fill="#10263b"/>
+  <path d="M0 500h1200" stroke="#edf3f1" opacity=".22"/>
+  <text x="82" y="196" fill="#f7f2e8" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="4">TIVION</text>
+  <text x="88" y="246" fill="#93a6b5" font-family="Courier New, monospace" font-size="26" letter-spacing="9">SPACE INTERNATIONAL</text>
+  <text x="82" y="345" fill="#f7f2e8" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Earth intelligence, engineered end to end.</text>
+</svg>
