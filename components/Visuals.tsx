@@ -1,6 +1,7 @@
 export function HeroVisual() {
   return (
     <div className="hero-visual" aria-label="Abstract orbital radar visualization">
+      <div className="hero-media" />
       <div className="earth-limb" />
       <div className="orbit orbit-one" />
       <div className="orbit orbit-two" />
@@ -67,6 +68,10 @@ export function DeliveryConsole() {
       <div className="console-top">
         <span>AOI Monitor</span>
         <span>SAR + Optical</span>
+      </div>
+      <div className="console-readout">
+        <strong>Change signal</strong>
+        <span>AOI-17 / Corridor North</span>
       </div>
       <div className="console-map">
         <div className="scan-line" />
