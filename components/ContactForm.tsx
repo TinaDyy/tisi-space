@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { gradientButtonClasses } from "@/components/ui";
 import { inquiryCategories, timelines } from "@/lib/site";
 
 type FormState = Record<string, string>;
@@ -19,6 +20,13 @@ const initialState: FormState = {
   consent: "",
   website: "",
 };
+
+const labelClasses = "text-xs font-black uppercase tracking-[0.15em] text-black/60";
+const inputClasses =
+  "w-full border border-black/25 bg-white px-4 py-3 text-sm text-black placeholder-black/30 outline-none transition focus:border-black";
+const errorClasses = "text-xs text-black";
+const statusClasses =
+  "border border-black bg-white p-4 text-sm text-black";
 
 function validate(values: FormState) {
   const errors: Errors = {};
@@ -73,11 +81,11 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={onSubmit} noValidate>
+    <form className="flex flex-col gap-6" onSubmit={onSubmit} noValidate>
       {errorSummary.length ? (
-        <div className="form-status" role="alert">
-          <strong>Review the highlighted fields.</strong>
-          <ul>
+        <div className={statusClasses} role="alert">
+          <strong className="mb-2 block">Review the highlighted fields.</strong>
+          <ul className="list-disc pl-4">
             {errorSummary.map((error) => (
               <li key={error}>{error}</li>
             ))}
@@ -85,7 +93,7 @@ export function ContactForm() {
         </div>
       ) : null}
       {message ? (
-        <div className="form-status" role="status">
+        <div className={statusClasses} role="status">
           {message}
         </div>
       ) : null}
@@ -100,14 +108,14 @@ export function ContactForm() {
           onChange={(event) => update("website", event.target.value)}
         />
       </div>
-      <div className="field-grid">
+      <div className="grid gap-4 sm:grid-cols-2">
         <Field id="fullName" label="Full name" value={values.fullName} error={errors.fullName} onChange={update} />
         <Field id="email" label="Work email" type="email" value={values.email} error={errors.email} onChange={update} />
         <Field id="organization" label="Organization" value={values.organization} error={errors.organization} onChange={update} />
         <Field id="role" label="Role" value={values.role} error={errors.role} onChange={update} />
         <Field id="region" label="Country or region" value={values.region} error={errors.region} onChange={update} />
-        <div className="field">
-          <label htmlFor="category">Inquiry category</label>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="category" className={labelClasses}>Inquiry category</label>
           <select
             id="category"
             name="category"
@@ -115,17 +123,18 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.category)}
             aria-describedby={errors.category ? "category-error" : undefined}
             onChange={(event) => update("category", event.target.value)}
+            className={inputClasses}
           >
             <option value="">Select a category</option>
             {inquiryCategories.map((category) => (
               <option key={category} value={category}>{category}</option>
             ))}
           </select>
-          {errors.category ? <span className="error" id="category-error">{errors.category}</span> : null}
+          {errors.category ? <span className={errorClasses} id="category-error">{errors.category}</span> : null}
         </div>
         <Field id="interest" label="Area of interest" value={values.interest} error={errors.interest} onChange={update} />
-        <div className="field">
-          <label htmlFor="timeline">Project timeline</label>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="timeline" className={labelClasses}>Project timeline</label>
           <select
             id="timeline"
             name="timeline"
@@ -133,17 +142,18 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.timeline)}
             aria-describedby={errors.timeline ? "timeline-error" : undefined}
             onChange={(event) => update("timeline", event.target.value)}
+            className={inputClasses}
           >
             <option value="">Select a timeline</option>
             {timelines.map((timeline) => (
               <option key={timeline} value={timeline}>{timeline}</option>
             ))}
           </select>
-          {errors.timeline ? <span className="error" id="timeline-error">{errors.timeline}</span> : null}
+          {errors.timeline ? <span className={errorClasses} id="timeline-error">{errors.timeline}</span> : null}
         </div>
       </div>
-      <div className="field">
-        <label htmlFor="message">Message</label>
+      <div className="flex flex-col gap-2">
+        <label htmlFor="message" className={labelClasses}>Message</label>
         <textarea
           id="message"
           name="message"
@@ -151,20 +161,24 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
           onChange={(event) => update("message", event.target.value)}
+          className={`${inputClasses} min-h-[150px] resize-y`}
         />
-        {errors.message ? <span className="error" id="message-error">{errors.message}</span> : null}
+        {errors.message ? <span className={errorClasses} id="message-error">{errors.message}</span> : null}
       </div>
-      <label className="checkbox-field">
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-black/65">
         <input
           type="checkbox"
           checked={values.consent === "on"}
           onChange={(event) => update("consent", event.target.checked ? "on" : "")}
-        />{" "}
-        I agree to be contacted about this inquiry and understand that project
-        details will be handled according to the privacy policy.
+          className="mt-1 h-4 w-4 accent-black"
+        />
+        <span>
+          I agree to be contacted about this inquiry and understand that project
+          details will be handled according to the privacy policy.
+        </span>
       </label>
-      {errors.consent ? <span className="error">{errors.consent}</span> : null}
-      <button className="button primary" type="submit" disabled={disabled}>
+      {errors.consent ? <span className={errorClasses}>{errors.consent}</span> : null}
+      <button className={gradientButtonClasses("self-start")} type="submit" disabled={disabled}>
         {disabled ? "Sending..." : "Send Inquiry"}
       </button>
     </form>
@@ -187,8 +201,8 @@ function Field({
   onChange: (name: string, value: string) => void;
 }) {
   return (
-    <div className="field">
-      <label htmlFor={id}>{label}</label>
+    <div className="flex flex-col gap-2">
+      <label htmlFor={id} className={labelClasses}>{label}</label>
       <input
         id={id}
         name={id}
@@ -197,8 +211,9 @@ function Field({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
         onChange={(event) => onChange(id, event.target.value)}
+        className={inputClasses}
       />
-      {error ? <span className="error" id={`${id}-error`}>{error}</span> : null}
+      {error ? <span className={errorClasses} id={`${id}-error`}>{error}</span> : null}
     </div>
   );
 }

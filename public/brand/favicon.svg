@@ -1,8 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#06111f"/>
-  <path d="M8 42c14.8-25 33.4-33.2 48-24.8" fill="none" stroke="#d59b35" stroke-linecap="round" stroke-width="4"/>
-  <path d="M14 46c12.5-15.4 25.5-20.6 39-15" fill="none" stroke="#4cc7d9" stroke-linecap="round" stroke-width="2.5" opacity=".82"/>
-  <path d="M26 19h13l-6.5 25L26 19Z" fill="#f7f2e8"/>
-  <path d="M32.5 44 39 19h7L32.5 52 19 19h7l6.5 25Z" fill="#f7f2e8" opacity=".74"/>
-  <circle cx="49" cy="18" r="3" fill="#d59b35"/>
+  <defs>
+    <linearGradient id="earth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fbcec"/>
+      <stop offset="100%" stop-color="#dce9f8" stop-opacity=".35"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#020510"/>
+  <path d="M14 60 A 21 21 0 0 1 56 60 Z" fill="url(#earth)" opacity=".9"/>
+  <path d="M4 56 C 16 24, 40 11, 58 18" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M47 8 L48.8 14.4 L55.2 16.2 L48.8 18 L47 24.4 L45.2 18 L38.8 16.2 L45.2 14.4 Z" fill="#d59b35"/>
+  <g transform="translate(56 9) rotate(35)">
+    <rect x="-2.4" y="-2.4" width="4.8" height="4.8" rx="0.9" fill="#ffffff"/>
+    <rect x="-9" y="-1.4" width="5.2" height="2.8" rx="0.6" fill="#ffffff"/>
+    <rect x="3.8" y="-1.4" width="5.2" height="2.8" rx="0.6" fill="#ffffff"/>
+  </g>
 </svg>

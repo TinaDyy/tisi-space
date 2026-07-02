@@ -1,11 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#06111f"/>
-  <path d="M80 410c270-430 650-470 1020-130" fill="none" stroke="#d59b35" stroke-width="5" opacity=".72"/>
-  <path d="M160 455c250-260 560-300 850-110" fill="none" stroke="#4cc7d9" stroke-width="4" opacity=".7"/>
-  <circle cx="908" cy="238" r="10" fill="#d59b35"/>
-  <path d="M0 498c220-75 475-96 733-46 181 35 332 96 467 157v21H0z" fill="#10263b"/>
-  <path d="M0 500h1200" stroke="#edf3f1" opacity=".22"/>
-  <text x="82" y="196" fill="#f7f2e8" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="4">TIVION</text>
-  <text x="88" y="246" fill="#93a6b5" font-family="Courier New, monospace" font-size="26" letter-spacing="9">SPACE INTERNATIONAL</text>
-  <text x="82" y="345" fill="#f7f2e8" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Earth intelligence, engineered end to end.</text>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="115%" r="90%">
+      <stop offset="0%" stop-color="#0b2447"/>
+      <stop offset="55%" stop-color="#050d1f"/>
+      <stop offset="100%" stop-color="#020510"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e8b64c"/>
+      <stop offset="100%" stop-color="#c9862b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="240" cy="90" r="1.6" fill="#ffffff" opacity=".7"/>
+  <circle cx="520" cy="150" r="1.2" fill="#ffffff" opacity=".5"/>
+  <circle cx="860" cy="70" r="1.8" fill="#ffffff" opacity=".6"/>
+  <circle cx="1050" cy="200" r="1.3" fill="#ffffff" opacity=".5"/>
+  <circle cx="700" cy="300" r="1.1" fill="#ffffff" opacity=".4"/>
+  <circle cx="150" cy="330" r="1.4" fill="#ffffff" opacity=".5"/>
+  <path d="M80 470 C 340 160, 740 90, 1120 190" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+  <path d="M960 120 L971 150 L1001 161 L971 172 L960 202 L949 172 L919 161 L949 150 Z" fill="#d59b35"/>
+  <g transform="translate(1060 150) rotate(32)">
+    <rect x="-16" y="-16" width="32" height="32" rx="6" fill="#ffffff"/>
+    <rect x="-62" y="-9" width="34" height="18" rx="4" fill="#ffffff"/>
+    <rect x="28" y="-9" width="34" height="18" rx="4" fill="#ffffff"/>
+  </g>
+  <g transform="translate(82 300) scale(2.6)" fill="#ffffff">
+    <path d="M0 0h20v5h-7.5v21h-5V5H0Z"/>
+    <rect x="26" width="5" height="26"/>
+    <path d="M37 0h5l6 17L54 0h5l-8.5 26h-5Z"/>
+    <rect x="65" width="5" height="26"/>
+    <path fill-rule="evenodd" d="M84 0h10c4.4 0 8 3.6 8 8v10c0 4.4-3.6 8-8 8H84c-4.4 0-8-3.6-8-8V8c0-4.4 3.6-8 8-8Zm1 5c-2.2 0-4 1.8-4 4v8c0 2.2 1.8 4 4 4h8c2.2 0 4-1.8 4-4V9c0-2.2-1.8-4-4-4Z"/>
+    <path d="M108 26V0h5l12 18V0h5v26h-5l-12-18v18Z"/>
+  </g>
+  <path d="M198 304 L215.7 304 L206.8 330 Z" fill="#d59b35"/>
+  <text x="84" y="428" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="6" textLength="338" lengthAdjust="spacing">SPACE INTERNATIONAL</text>
+  <text x="84" y="520" fill="url(#accent)" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="700">From orbit to action.</text>
 </svg>

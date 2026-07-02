@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
+import { GlassCard, GradientPill, SectionHeader } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -17,65 +19,64 @@ const principles = [
   "Document milestones, assumptions, and delivery responsibilities clearly.",
 ];
 
+const sectionPadding = "px-6 py-14 md:px-12 lg:px-16";
+
 export default function CompanyPage() {
   return (
     <>
-      <section className="page-hero">
-        <span className="eyebrow">Company</span>
-        <h1>Making space-based observation practical for real operations.</h1>
-        <p className="lead">
-          {site.name} is building an independent Earth-intelligence company for
-          customers who need to understand material change on Earth quickly
-          enough to respond intelligently.
-        </p>
-      </section>
-      <section className="section paper-section">
-        <div className="grid-2">
-          <article>
-            <span className="eyebrow">Mission</span>
-            <h2>Make sophisticated space-based observation accessible as a practical operational capability.</h2>
-          </article>
-          <article>
-            <span className="eyebrow">Vision</span>
-            <h2>A world where organizations can understand material change on Earth in time to act.</h2>
-          </article>
+      <PageHero
+        eyebrow="Company"
+        title="Making space-based observation practical for real operations."
+        lead={`${site.name} is building an independent Earth-intelligence company for customers who need to understand material change on Earth quickly enough to respond intelligently.`}
+      />
+      <section className={sectionPadding}>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <GlassCard>
+            <p className="mb-4 text-[11px] font-black uppercase tracking-[0.2em] text-black/55">
+              Mission
+            </p>
+            <h2 className="text-xl font-black leading-snug text-black md:text-2xl">
+              Make sophisticated space-based observation accessible as a
+              practical operational capability.
+            </h2>
+          </GlassCard>
+          <GlassCard>
+            <p className="mb-4 text-[11px] font-black uppercase tracking-[0.2em] text-black/55">
+              Vision
+            </p>
+            <h2 className="text-xl font-black leading-snug text-black md:text-2xl">
+              A world where organizations can understand material change on
+              Earth in time to act.
+            </h2>
+          </GlassCard>
         </div>
       </section>
-      <section className="section">
-        <div className="section-header">
-          <div>
-            <span className="eyebrow">Operating model</span>
-            <h2>Independent, modular, and mission-led.</h2>
-          </div>
-          <p className="muted">
-            TIVION works with governments, infrastructure operators, enterprise
-            customers, investors, and strategic partners across mission
-            development, payload and system engineering, data services,
-            monitoring programs, and application delivery.
-          </p>
-        </div>
-        <div className="grid-3">
-          {principles.map((principle) => (
-            <article className="principle-card" key={principle}>
-              <h3>{principle}</h3>
-            </article>
+      <section className={sectionPadding}>
+        <SectionHeader
+          eyebrow="Operating model"
+          title="Independent, modular, and mission-led."
+          lead="TIVION works with governments, infrastructure operators, enterprise customers, investors, and strategic partners across mission development, payload and system engineering, data services, monitoring programs, and application delivery."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {principles.map((principle, index) => (
+            <GlassCard key={principle} className="!p-5">
+              <span className="mb-3 block text-2xl font-black text-black">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-sm font-semibold leading-relaxed text-black/70">
+                {principle}
+              </h3>
+            </GlassCard>
           ))}
         </div>
       </section>
-      <section className="section paper-section">
-        <div className="section-header">
-          <div>
-            <span className="eyebrow">Partnership approach</span>
-            <h2>Built to collaborate across the value chain.</h2>
-          </div>
-          <p className="lead">
-            TIVION can support a focused analytics program, a satellite-data
-            access workflow, a ground-segment architecture, or a broader mission
-            development effort. The engagement model is scoped around the
-            customer requirement rather than a fixed product box.
-          </p>
-        </div>
-        <a className="button primary" href="/contact">{site.cta.primary}</a>
+      <section className={`${sectionPadding} pb-24`}>
+        <SectionHeader
+          eyebrow="Partnership approach"
+          title="Built to collaborate across the value chain."
+          lead="TIVION can support a focused analytics program, a satellite-data access workflow, a ground-segment architecture, or a broader mission development effort. The engagement model is scoped around the customer requirement rather than a fixed product box."
+        />
+        <GradientPill href="/contact">{site.cta.primary}</GradientPill>
       </section>
     </>
   );

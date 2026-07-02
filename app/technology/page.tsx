@@ -1,5 +1,7 @@
 import { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
 import { ArchitectureDiagram } from "@/components/Visuals";
+import { GlassCard, GradientPill, SectionHeader } from "@/components/ui";
 import { site, technology } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -9,98 +11,86 @@ export const metadata: Metadata = {
   alternates: { canonical: "/technology" },
 };
 
+const sectionPadding = "px-6 py-14 md:px-12 lg:px-16";
+
 export default function TechnologyPage() {
   return (
     <>
-      <section className="page-hero">
-        <span className="eyebrow">Technology</span>
-        <h1>Transparent architecture for practical Earth intelligence.</h1>
-        <p className="lead">
-          The technology story is deliberately clear: sensors collect evidence,
-          ground systems move it, pipelines prepare it, analytics interpret it,
-          and delivery interfaces place it in operational hands.
-        </p>
-      </section>
+      <PageHero
+        eyebrow="Technology"
+        title="Transparent architecture for practical Earth intelligence."
+        lead="The technology story is deliberately clear: sensors collect evidence, ground systems move it, pipelines prepare it, analytics interpret it, and delivery interfaces place it in operational hands."
+      />
 
-      <section className="section">
-        <div className="section-header">
-          <div>
-            <span className="eyebrow">Sensor modalities</span>
-            <h2>Choose the observation layer the mission needs.</h2>
-          </div>
-          <p className="muted">
-            Missions can combine radar, optical, spectral, and complementary
-            sources when the decision requires multiple kinds of evidence.
-          </p>
-        </div>
-        <div className="grid-2">
+      <section className={sectionPadding}>
+        <SectionHeader
+          eyebrow="Sensor modalities"
+          title="Choose the observation layer the mission needs."
+          lead="Missions can combine radar, optical, spectral, and complementary sources when the decision requires multiple kinds of evidence."
+        />
+        <div className="grid gap-4 md:grid-cols-2">
           {technology.sensors.map(([title, copy]) => (
-            <article className="card" key={title}>
-              <h3>{title}</h3>
-              <p className="muted">{copy}</p>
-            </article>
+            <GlassCard key={title}>
+              <h3 className="mb-3 text-lg font-black text-black">{title}</h3>
+              <p className="text-sm leading-relaxed text-black/65">{copy}</p>
+            </GlassCard>
           ))}
         </div>
       </section>
 
-      <section className="section paper-section">
-        <div className="section-header">
-          <div>
-            <span className="eyebrow">Architecture</span>
-            <h2>Ground and processing flow.</h2>
-          </div>
-          <p className="lead">
-            The architecture separates mission control, processing, geospatial
-            infrastructure, analytics, and customer delivery so each layer can
-            be scoped, secured, and improved independently.
-          </p>
-        </div>
+      <section className={sectionPadding}>
+        <SectionHeader
+          eyebrow="Architecture"
+          title="Ground and processing flow."
+          lead="The architecture separates mission control, processing, geospatial infrastructure, analytics, and customer delivery so each layer can be scoped, secured, and improved independently."
+        />
         <ArchitectureDiagram />
       </section>
 
-      <section className="section">
-        <div className="section-header">
-          <div>
-            <span className="eyebrow">Pipeline</span>
-            <h2>From collection to distribution.</h2>
-          </div>
-          <p className="muted">
-            Processing levels and review depth are configured to the mission,
-            data source, decision timeline, and delivery format.
-          </p>
-        </div>
-        <div className="workflow">
+      <section className={sectionPadding}>
+        <SectionHeader
+          eyebrow="Pipeline"
+          title="From collection to distribution."
+          lead="Processing levels and review depth are configured to the mission, data source, decision timeline, and delivery format."
+        />
+        <div className="flex flex-wrap gap-3">
           {technology.pipeline.map((step, index) => (
-            <article className="workflow-step" key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{step}</h3>
-            </article>
+            <span
+              key={step}
+              className="inline-flex items-center gap-2 border border-black/25 px-4 py-2 text-sm text-black/70"
+            >
+              <span className="text-xs font-black text-black">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {step}
+            </span>
           ))}
         </div>
       </section>
 
-      <section className="section paper-section">
-        <div className="grid-2">
+      <section className={`${sectionPadding} pb-24`}>
+        <div className="grid items-start gap-10 lg:grid-cols-2">
           <div>
-            <span className="eyebrow">Delivery interfaces</span>
-            <h2>Interfaces that fit the customer workflow.</h2>
-            <p className="lead">
-              Delivery can include secure portals, API access, event alerts,
-              standard geospatial formats, custom integrations, and operational
-              reporting.
-            </p>
+            <SectionHeader
+              eyebrow="Delivery interfaces"
+              title="Interfaces that fit the customer workflow."
+              lead="Delivery can include secure portals, API access, event alerts, standard geospatial formats, custom integrations, and operational reporting."
+              className="mb-8"
+            />
+            <GradientPill href="/contact">{site.cta.primary}</GradientPill>
           </div>
-          <div className="card">
-            <span className="eyebrow">Security and reliability</span>
-            <ul>
+          <GlassCard>
+            <h3 className="mb-4 text-sm font-black uppercase tracking-[0.15em] text-black">
+              Security and reliability
+            </h3>
+            <ul className="flex list-disc flex-col gap-3 pl-4 marker:text-black">
               {technology.security.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="text-sm leading-relaxed text-black/65">
+                  {item}
+                </li>
               ))}
             </ul>
-          </div>
-        </div>
-        <div className="cta-row">
-          <a className="button primary" href="/contact">{site.cta.primary}</a>
+          </GlassCard>
         </div>
       </section>
     </>

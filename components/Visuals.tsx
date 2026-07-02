@@ -1,24 +1,9 @@
-export function HeroVisual() {
-  return (
-    <div className="hero-visual" aria-label="Abstract orbital radar visualization">
-      <div className="hero-media" />
-      <div className="earth-limb" />
-      <div className="orbit orbit-one" />
-      <div className="orbit orbit-two" />
-      <div className="radar-sweep" />
-      <div className="satellite-node" />
-      <div className="terrain-grid">
-        {Array.from({ length: 36 }).map((_, index) => (
-          <span key={index} />
-        ))}
-      </div>
-    </div>
-  );
-}
+const gradientNumber =
+  "text-black font-black";
 
 export function IconDiagram({ index }: { index: number }) {
   return (
-    <svg className="icon-diagram" viewBox="0 0 96 96" aria-hidden="true">
+    <svg className="h-12 w-12 text-black" viewBox="0 0 96 96" aria-hidden="true">
       <circle cx="48" cy="48" r="34" fill="none" stroke="currentColor" strokeWidth="1.4" opacity=".28" />
       <path
         d="M18 58c19-28 41-35 60-20"
@@ -51,11 +36,16 @@ export function ArchitectureDiagram() {
     "Customer delivery",
   ];
   return (
-    <div className="architecture-diagram" aria-label="Earth observation architecture diagram">
+    <div
+      className="grid overflow-hidden border border-black bg-black gap-px sm:grid-cols-2 md:grid-cols-7"
+      aria-label="Earth observation architecture diagram"
+    >
       {nodes.map((node, index) => (
-        <div className="arch-node" key={node}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <strong>{node}</strong>
+        <div className="flex flex-col gap-2 bg-white p-4" key={node}>
+          <span className={`text-2xl ${gradientNumber}`}>
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <strong className="text-sm font-semibold text-black">{node}</strong>
         </div>
       ))}
     </div>
@@ -64,24 +54,41 @@ export function ArchitectureDiagram() {
 
 export function DeliveryConsole() {
   return (
-    <div className="delivery-console" aria-label="Original geospatial delivery interface illustration">
-      <div className="console-top">
+    <div
+      className="flex flex-col gap-4 border border-black bg-white p-6"
+      aria-label="Original geospatial delivery interface illustration"
+    >
+      <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-[0.2em] text-black/50">
         <span>AOI Monitor</span>
-        <span>SAR + Optical</span>
+        <span className="text-black">
+          SAR + Optical
+        </span>
       </div>
-      <div className="console-readout">
-        <strong>Change signal</strong>
-        <span>AOI-17 / Corridor North</span>
+      <div className="flex items-baseline justify-between border border-black/25 px-4 py-3">
+        <strong className="text-sm font-semibold text-black">Change signal</strong>
+        <span className="text-xs text-black/50">AOI-17 / Corridor North</span>
       </div>
-      <div className="console-map">
-        <div className="scan-line" />
+      <div className="relative grid grid-cols-6 gap-px overflow-hidden border border-black bg-black">
+        <div className="scan-line-x" aria-hidden="true" />
         {Array.from({ length: 18 }).map((_, index) => (
-          <i key={index} />
+          <i
+            key={index}
+            className={`block h-12 ${
+              [4, 9, 13].includes(index)
+                ? "bg-black/25"
+                : "bg-white"
+            }`}
+          />
         ))}
       </div>
-      <div className="console-rail">
+      <div className="flex flex-wrap gap-2">
         {["Alert", "API", "Layer", "Report"].map((label) => (
-          <span key={label}>{label}</span>
+          <span
+            key={label}
+            className="border border-black/25 px-3 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-black/60"
+          >
+            {label}
+          </span>
         ))}
       </div>
     </div>

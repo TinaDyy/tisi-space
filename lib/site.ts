@@ -7,14 +7,19 @@ export const site = {
   email: "mission@tivion.space",
   phone: "+1 888 482 6608",
   address: "North American mission coordination desk",
-  themeColor: "#06111f",
+  themeColor: "#000000",
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
+    twitter: process.env.NEXT_PUBLIC_TWITTER_URL || "",
+    youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || "",
   },
   cta: {
     primary: "Discuss a Mission",
     requirements: "Discuss Your Requirements",
     capabilities: "Explore Capabilities",
+    contact: "Contact Us",
   },
 } as const;
 
@@ -104,9 +109,6 @@ export const workflow = [
   ["Define the mission", "Translate operational questions into sensing requirements, geography, timing, and delivery constraints."],
   ["Design the architecture", "Select sensor modes, mission cadence, ground flow, data sources, and analytic outputs."],
   ["Task the system", "Coordinate satellite or constellation tasking, collection windows, and area-of-interest priorities."],
-  ["Acquire and downlink", "Receive and catalogue data through ground infrastructure and controlled processing queues."],
-  ["Process and analyze", "Calibrate, georeference, enhance, extract features, detect change, and review outputs."],
-  ["Deliver intelligence", "Provide alerts, APIs, maps, imagery, dashboards, or executive reporting for decisions."],
 ] as const;
 
 export const solutions = [
