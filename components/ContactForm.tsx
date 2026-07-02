@@ -81,7 +81,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="flex flex-col gap-6" onSubmit={onSubmit} noValidate>
+    <form className="flex flex-col gap-5" onSubmit={onSubmit} noValidate>
       {errorSummary.length ? (
         <div className={statusClasses} role="alert">
           <strong className="mb-2 block">Review the highlighted fields.</strong>
@@ -109,11 +109,13 @@ export function ContactForm() {
         />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field id="fullName" label="Full name" value={values.fullName} error={errors.fullName} onChange={update} />
-        <Field id="email" label="Work email" type="email" value={values.email} error={errors.email} onChange={update} />
-        <Field id="organization" label="Organization" value={values.organization} error={errors.organization} onChange={update} />
-        <Field id="role" label="Role" value={values.role} error={errors.role} onChange={update} />
-        <Field id="region" label="Country or region" value={values.region} error={errors.region} onChange={update} />
+        <Field id="fullName" label="Full name" placeholder="Jane Chen" value={values.fullName} error={errors.fullName} onChange={update} />
+        <Field id="email" label="Work email" type="email" placeholder="jane@organization.com" value={values.email} error={errors.email} onChange={update} />
+        <Field id="organization" label="Organization" placeholder="Agency, operator, or company" value={values.organization} error={errors.organization} onChange={update} />
+        <Field id="role" label="Role" placeholder="Program lead, analyst, engineer" value={values.role} error={errors.role} onChange={update} />
+      </div>
+      <div className="grid gap-4 lg:grid-cols-3">
+        <Field id="region" label="Country or region" placeholder="Region of interest" value={values.region} error={errors.region} onChange={update} />
         <div className="flex flex-col gap-2">
           <label htmlFor="category" className={labelClasses}>Inquiry category</label>
           <select
@@ -132,7 +134,6 @@ export function ContactForm() {
           </select>
           {errors.category ? <span className={errorClasses} id="category-error">{errors.category}</span> : null}
         </div>
-        <Field id="interest" label="Area of interest" value={values.interest} error={errors.interest} onChange={update} />
         <div className="flex flex-col gap-2">
           <label htmlFor="timeline" className={labelClasses}>Project timeline</label>
           <select
@@ -152,6 +153,14 @@ export function ContactForm() {
           {errors.timeline ? <span className={errorClasses} id="timeline-error">{errors.timeline}</span> : null}
         </div>
       </div>
+      <Field
+        id="interest"
+        label="Area of interest"
+        placeholder="Example: crop monitoring, port activity, infrastructure change"
+        value={values.interest}
+        error={errors.interest}
+        onChange={update}
+      />
       <div className="flex flex-col gap-2">
         <label htmlFor="message" className={labelClasses}>Message</label>
         <textarea
@@ -161,7 +170,8 @@ export function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
           onChange={(event) => update("message", event.target.value)}
-          className={`${inputClasses} min-h-[150px] resize-y`}
+          placeholder="Share the decision to support, location or asset type, target timeline, and preferred output."
+          className={`${inputClasses} min-h-[132px] resize-y`}
         />
         {errors.message ? <span className={errorClasses} id="message-error">{errors.message}</span> : null}
       </div>
@@ -189,6 +199,7 @@ function Field({
   id,
   label,
   type = "text",
+  placeholder,
   value,
   error,
   onChange,
@@ -196,6 +207,7 @@ function Field({
   id: string;
   label: string;
   type?: string;
+  placeholder?: string;
   value: string;
   error?: string;
   onChange: (name: string, value: string) => void;
@@ -207,6 +219,7 @@ function Field({
         id={id}
         name={id}
         type={type}
+        placeholder={placeholder}
         value={value}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
