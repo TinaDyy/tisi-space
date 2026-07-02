@@ -8,26 +8,26 @@ import { capabilities, site, solutions, workflow } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Earth Intelligence Engineered End to End",
   description:
-    "TIVION Space International designs satellite systems, mission infrastructure, remote-sensing data flows, and decision-support applications.",
+    "TIVION Space International develops SAR payloads, manages satellite operations, and delivers space-air remote-sensing data services.",
   alternates: { canonical: "/" },
 };
 
 const engagements = [
-  "Design a complete mission",
-  "Develop a satellite or payload",
-  "Establish mission and ground infrastructure",
-  "Acquire Earth-observation data",
-  "Monitor a region or asset",
-  "Turn raw imagery into operational intelligence",
+  "Order space-air remote-sensing data",
+  "Host and manage satellite operations",
+  "Develop SAR payloads and satellite systems",
+  "Build a data product or delivery platform",
+  "Process imagery into industry applications",
+  "Operate an end-to-end observation program",
 ];
 
 const principles = [
-  "Multi-sensor intelligence",
-  "SAR for dependable observation through darkness and many cloud conditions",
-  "Configurable mission architectures",
-  "Rapid data-to-decision workflows",
-  "Automated monitoring with review paths",
-  "Delivery through APIs, alerts, maps, imagery, and reports",
+  "Customer-led mission definition",
+  "Service culture with accountable delivery",
+  "SAR payload and small-satellite engineering depth",
+  "Owned, authorized, archive, and aerial data sourcing",
+  "Cloud-based ordering, processing, and delivery workflows",
+  "Industry applications for government and enterprise users",
 ];
 
 const sectionPadding = "px-6 py-16 md:px-12 md:py-24 lg:px-16";
@@ -39,14 +39,9 @@ const sectionPadding = "px-6 py-16 md:px-12 md:py-24 lg:px-16";
  */
 const capabilityShowcase = [
   {
-    name: "Constellation",
+    name: "Data",
     image:
-      "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=82",
-  },
-  {
-    name: "Payload",
-    image:
-      "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1800&q=82",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=82",
   },
   {
     name: "Operations",
@@ -54,14 +49,9 @@ const capabilityShowcase = [
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?auto=format&fit=crop&w=1800&q=82",
   },
   {
-    name: "Data",
+    name: "Systems",
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=82",
-  },
-  {
-    name: "Analytics",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=82",
+      "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1800&q=82",
   },
 ] as const;
 
@@ -148,8 +138,9 @@ export default function Home() {
               Action
             </h2>
             <p className="mt-6 max-w-md text-lg leading-snug text-black/65">
-              Customers can engage at the exact layer their mission requires:
-              architecture, payloads, operations, data, analytics, or delivery.
+              Customers can engage TIVION for the complete chain: SAR payload
+              and satellite-system development, lifecycle operations, space-air
+              data services, processing, products, and application delivery.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <GradientPill href="/contact">{site.cta.primary}</GradientPill>
@@ -222,7 +213,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Workflow"
             title="Aerospace complexity, explained operationally."
-            lead="Every mission begins with a decision to support. The architecture, tasking plan, processing chain, and delivery interface are shaped around that operational outcome."
+            lead="Every mission begins with the customer requirement. The satellite, tasking plan, data resource pool, processing chain, and delivery interface are shaped around that operational outcome."
             className="mb-0"
           />
           <ol className="border-y border-black">
@@ -283,8 +274,8 @@ export default function Home() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader
             eyebrow="How we build"
-            title="Designed for dependable delivery, not spectacle."
-            lead="The strongest system is often the clearest one: selected sensors, transparent processing, direct outputs, and delivery channels customers can use in existing operations."
+            title="Customer-led, service-driven, technology-grounded."
+            lead="TIVION is built around practical commercial space capability: strong SAR engineering, reliable operations, multi-source data access, and applications that customers can use inside real workflows."
             className="mb-0"
           />
           <ul className="grid gap-x-10 gap-y-5 sm:grid-cols-2">
@@ -305,8 +296,8 @@ export default function Home() {
           <div>
             <SectionHeader
               eyebrow="Data delivery"
-              title="Built for teams that need usable intelligence."
-              lead="Delivery can include secure geospatial interfaces, APIs, downloadable imagery, change-detection layers, alerts, notifications, executive reports, and custom operational dashboards."
+              title="A data service platform for usable intelligence."
+              lead="Delivery can include secure catalogues, custom data ordering, APIs, downloadable imagery, processed products, industry reports, alerts, notifications, and operational dashboards."
               className="mb-8"
             />
             <div className="flex flex-wrap gap-4">
@@ -324,9 +315,10 @@ export default function Home() {
             Build the mission. Observe the change. Act with clarity.
           </h2>
           <p className="max-w-2xl leading-snug text-black/65 md:text-lg">
-            Bring a region, asset, event, or strategic question. We will map the
-            sensing architecture, data path, and intelligence output needed to
-            support the decision.
+            Bring a satellite program, data requirement, region, asset, event,
+            or strategic question. We will map the satellite capability, data
+            path, product workflow, and intelligence output needed to support
+            the decision.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <GradientPill href="/contact">{site.cta.requirements}</GradientPill>

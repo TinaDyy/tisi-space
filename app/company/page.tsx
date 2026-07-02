@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const principles = [
-  "Start with the operational decision, then design the observation system.",
-  "Separate confirmed capability from future ambition in customer communication.",
-  "Use modular architectures so missions can begin focused and expand responsibly.",
-  "Prefer interoperable formats and customer-controlled workflows.",
-  "Apply human review where automated signals affect high-consequence decisions.",
-  "Document milestones, assumptions, and delivery responsibilities clearly.",
+  "Put the customer mission first and define success in operational terms.",
+  "Treat service delivery as a core product, from requirements through handover.",
+  "Use creative engineering to make sophisticated space capability practical.",
+  "Ground every program in credible SAR, satellite, data, and application technology.",
+  "Build modular systems across payloads, operations, data platforms, and applications.",
+  "Document milestones, assumptions, quality controls, and delivery responsibilities clearly.",
 ];
 
 const sectionPadding = "px-6 py-14 md:px-12 lg:px-16";
@@ -26,8 +26,8 @@ export default function CompanyPage() {
     <>
       <PageHero
         eyebrow="Company"
-        title="Making space-based observation practical for real operations."
-        lead={`${site.name} is building an independent Earth-intelligence company for customers who need to understand material change on Earth quickly enough to respond intelligently.`}
+        title="A commercial space company built around data, operations, and SAR systems."
+        lead={`${site.name} develops the operational chain behind Earth intelligence: SAR payload and satellite-system programs, satellite operations management, data reception and processing, product generation, and remote-sensing application solutions for government and enterprise customers.`}
       />
       <section className={sectionPadding}>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -36,8 +36,8 @@ export default function CompanyPage() {
               Mission
             </p>
             <h2 className="text-xl font-black leading-snug text-black md:text-2xl">
-              Make sophisticated space-based observation accessible as a
-              practical operational capability.
+              Make space-air remote sensing, SAR capability, and satellite
+              operations accessible as practical services customers can use.
             </h2>
           </GlassCard>
           <GlassCard>
@@ -45,8 +45,8 @@ export default function CompanyPage() {
               Vision
             </p>
             <h2 className="text-xl font-black leading-snug text-black md:text-2xl">
-              A world where organizations can understand material change on
-              Earth in time to act.
+              A competitive Earth-intelligence ecosystem where data, satellite
+              infrastructure, and applications move from orbit to action.
             </h2>
           </GlassCard>
         </div>
@@ -54,8 +54,8 @@ export default function CompanyPage() {
       <section className={sectionPadding}>
         <SectionHeader
           eyebrow="Operating model"
-          title="Independent, modular, and mission-led."
-          lead="TIVION works with governments, infrastructure operators, enterprise customers, investors, and strategic partners across mission development, payload and system engineering, data services, monitoring programs, and application delivery."
+          title="Customer first, service led, creative in approach, grounded in technology."
+          lead="TIVION works across the commercial space value chain: satellite and SAR payload development, in-orbit operations, ground reception, data processing, data products, value-added applications, and industry-specific solutions."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((principle, index) => (
@@ -74,7 +74,7 @@ export default function CompanyPage() {
         <SectionHeader
           eyebrow="Partnership approach"
           title="Built to collaborate across the value chain."
-          lead="TIVION can support a focused analytics program, a satellite-data access workflow, a ground-segment architecture, or a broader mission development effort. The engagement model is scoped around the customer requirement rather than a fixed product box."
+          lead="TIVION can support a focused data-service requirement, a hosted satellite operations workflow, a SAR payload or small-satellite development effort, a ground-to-cloud data platform, or a full remote-sensing application program. The engagement model is scoped around the customer requirement rather than a fixed product box."
         />
         <GradientPill href="/contact">{site.cta.primary}</GradientPill>
       </section>

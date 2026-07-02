@@ -6,7 +6,7 @@ import { capabilities, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Capabilities",
   description:
-    "Satellite mission design, payload engineering, mission operations, Earth-observation data, and analytics capabilities.",
+    "Space-air data services, satellite operations management, SAR payload development, and remote-sensing application delivery.",
   alternates: { canonical: "/capabilities" },
 };
 
@@ -15,8 +15,8 @@ export default function CapabilitiesPage() {
     <>
       <PageHero
         eyebrow="Capabilities"
-        title="Engage at any layer of the Earth-intelligence chain."
-        lead="TIVION supports missions from early requirements through satellite architecture, payload selection, operations, data access, analytics, and industry reporting."
+        title="Commercial space capability across data, operations, and systems."
+        lead="TIVION supports customers with space-air remote-sensing data services, trusted satellite lifecycle operations, SAR payload development, satellite-system architecture, processing, products, and application solutions."
       />
       <section className="flex flex-col gap-20 px-6 pb-24 pt-8 md:px-12 md:pt-10 lg:px-16">
         {capabilities.map((item) => (
@@ -30,7 +30,7 @@ export default function CapabilitiesPage() {
                   {item.title}
                 </h2>
                 <p className="leading-relaxed text-black/65">{item.summary}</p>
-                {item.slug === "payload-engineering" ? (
+                {item.slug === "satellite-system-development" ? (
                   <p className="leading-relaxed text-black/65">
                     SAR uses active radar sensing to observe the Earth through
                     darkness and many cloud conditions, making it valuable when

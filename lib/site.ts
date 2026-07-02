@@ -3,7 +3,7 @@ export const site = {
   shortName: "TIVION",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://tivion.space",
   description:
-    "An end-to-end Earth-intelligence partner connecting satellite systems, mission operations, remote-sensing data, and industry applications.",
+    "An end-to-end commercial space company for SAR payloads, satellite operations, space-air data services, and remote-sensing applications.",
   email: "mission@tivion.space",
   phone: "+1 888 482 6608",
   address: "North American mission coordination desk",
@@ -33,74 +33,48 @@ export const navigation = [
 
 export const capabilities = [
   {
-    slug: "satellite-constellation-systems",
-    title: "Satellite and Constellation Systems",
-    eyebrow: "Mission architecture",
-    href: "/capabilities#satellite-constellation-systems",
+    slug: "space-air-data-services",
+    title: "Space-Air Data Services",
+    eyebrow: "Data resources",
+    href: "/capabilities#space-air-data-services",
     summary:
-      "Mission requirements, orbit and coverage analysis, satellite system design, constellation planning, integration planning, and launch support coordination.",
+      "Remote-sensing data access and delivery built from owned constellation capacity, authorized partner satellites, historical archives, aerial remote sensing, and industry-ready data products.",
     details: [
-      "Requirements analysis and mission concept development",
-      "Orbit, access, and coverage trade studies",
-      "Sensor selection and constellation architecture",
-      "Spacecraft subsystem coordination",
-      "Ground-segment definition and integration planning",
+      "Multi-source satellite, archive, and aerial data access",
+      "Custom remote-sensing data ordering and delivery",
+      "Cloud-based data catalogues, subscriptions, and transactions",
+      "Processed imagery, geospatial layers, reports, APIs, and dashboards",
+      "Government, enterprise, and industry application support",
     ],
   },
   {
-    slug: "payload-engineering",
-    title: "Payload Engineering",
-    eyebrow: "Sensing systems",
-    href: "/capabilities#payload-engineering",
-    summary:
-      "SAR, optical, hyperspectral, multi-sensor payload concepts, accommodation planning, data-volume analysis, and onboard processing concepts.",
-    details: [
-      "SAR systems for dependable observation through darkness and many cloud conditions",
-      "Optical and hyperspectral imaging concepts",
-      "Payload accommodation and integration planning",
-      "Data-volume, onboard processing, and downlink planning",
-    ],
-  },
-  {
-    slug: "mission-ground-operations",
-    title: "Mission and Ground Operations",
+    slug: "satellite-operations-management",
+    title: "Satellite Operations Management",
     eyebrow: "Operate the mission",
-    href: "/capabilities#mission-ground-operations",
+    href: "/capabilities#satellite-operations-management",
     summary:
-      "Satellite tasking, mission planning, TT&C coordination, ground-station integration, data reception, storage, processing, and distribution.",
+      "Trusted satellite hosting and lifecycle operations covering mission planning, in-orbit monitoring, telemetry and control coordination, calibration, reception, storage, and data management.",
     details: [
-      "Task scheduling and mission planning",
-      "Telemetry, tracking, and control coordination",
-      "Ground-station integration and data downlink",
-      "Operational monitoring, storage, and cataloguing",
+      "Satellite lifecycle management and hosted operations",
+      "In-orbit measurement, control, and operational monitoring",
+      "Visualized attitude and mission-status awareness",
+      "Routine ground calibration and quality-control workflows",
+      "Global data reception, storage, cataloguing, and distribution",
     ],
   },
   {
-    slug: "earth-observation-data",
-    title: "Earth-Observation Data",
-    eyebrow: "Access and monitor",
-    href: "/capabilities#earth-observation-data",
+    slug: "satellite-system-development",
+    title: "Satellite System Development",
+    eyebrow: "SAR payloads",
+    href: "/capabilities#satellite-system-development",
     summary:
-      "New tasking, archive search, area-of-interest monitoring, multi-sensor sourcing, processing levels, and delivery mechanisms.",
+      "Low-cost batch small-satellite and SAR payload development, testing, constellation architecture, ground-to-space system design, and remote-sensing application delivery.",
     details: [
-      "SAR, optical, and hyperspectral data access",
-      "Archive search and recurring monitoring programs",
-      "Area-of-interest tasking and subscriptions",
-      "Delivery through portal, API, imagery packages, and reports",
-    ],
-  },
-  {
-    slug: "analytics-decision-support",
-    title: "Analytics and Decision Support",
-    eyebrow: "From pixels to action",
-    href: "/capabilities#analytics-decision-support",
-    summary:
-      "Detection, classification, change analysis, time-series monitoring, risk indicators, alert generation, expert interpretation, and industry reporting.",
-    details: [
-      "Change detection and trend analysis",
-      "Object, feature, and activity identification",
-      "Automated alerts with human review when required",
-      "Industry-specific reports for operational teams",
+      "SAR payload research, development, integration, and testing",
+      "Small-satellite system engineering and constellation planning",
+      "Space segment, ground segment, and data-chain architecture",
+      "Data reception, processing, product generation, and value-added applications",
+      "Application solutions for government, enterprise, and strategic partners",
     ],
   },
 ] as const;
@@ -212,10 +186,10 @@ export const technology = {
 } as const;
 
 export const inquiryCategories = [
-  "Satellite mission development",
-  "Payload and system engineering",
-  "Earth-observation data",
-  "Monitoring and analytics",
+  "Space-air data services",
+  "Satellite operations management",
+  "Satellite or SAR payload development",
+  "Remote-sensing applications",
   "Strategic partnerships",
   "General inquiry",
 ] as const;
