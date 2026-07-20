@@ -4,8 +4,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://tivion.space",
   description:
     "An end-to-end commercial space company for SAR payloads, satellite operations, space-air data services, and remote-sensing applications.",
-  email: "mission@tivion.space",
-  phone: "+1 888 482 6608",
+  email: "tivionspace@outlook.com",
+  phone: "(647) 799-5308",
   address: "North American mission coordination desk",
   themeColor: "#000000",
   social: {
